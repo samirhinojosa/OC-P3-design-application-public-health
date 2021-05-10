@@ -1,3 +1,17 @@
+https://world.openfoodfacts.org/
+https://openclassrooms.com/fr/paths/164/projects/628/resources
+https://github.com/ResidentMario/missingno
+
+https://www.youtube.com/watch?v=m_qKhnaYZlc
+https://www.youtube.com/watch?v=D6saJ9R65L4
+https://www.youtube.com/watch?v=QVEJJNsz-eM&t=29s
+https://machinelearningmastery.com/statistical-imputation-for-missing-values-in-machine-learning/
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html
+https://matplotlib.org/stable/gallery/statistics/boxplot_color.html#sphx-glr-gallery-statistics-boxplot-color-py
+
+
+
 https://openclassrooms.com/fr/paths/164/projects/628/resources
 https://openclassrooms.com/fr/courses/4525266-decrivez-et-nettoyez-votre-jeu-de-donnees/4928126-tp-nettoyez-votre-jeu-de-donnees
 https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees
@@ -6,3 +20,29 @@ https://world.openfoodfacts.org/
 https://world.openfoodfacts.org/data/data-fields.txt
 
 https://www.gastro.medline.ch/Services_et_outils/Conversions_et_calculs/Conversion_de_kcal_en_kJ.php
+
+
+- Pour analyser et détecter les aberrations = pandas.DataFrame.quantile ou KNN, remplacer les valeurs ou les supprimer
+
+- Analyser les corrélation (ex : geo + adresse, type d'arbres + taille + age
+
+- Analyser le nb de valeurs manquantes, aberrantes
+
+- Vizu des chiffres en graphique (titre, légende, respecter format, code couleur, etc)
+
+- Pertinent : moyenne, écrat type, mediane, moyenne longueur pour chaque catégorie, sélectionner colonne pertinente
+garder toutes les étapes d'analyses
+
+- Présentable : texte, explication, markdown
+
+- Si le temps : analyse multivarié
+
+
+
+
+
+Salut ! Projet validé ce matin pour moi  
+Si ça peut aider, l'évaluateur m'a interrogé sur les seuils utilisés lors de mon nettoyage des valeurs manquantes (pourquoi supprimer sous 30% de valeurs manquantes ?), il m'a aussi demandé de détailler la façon dont j'ai identifié les valeurs aberrantes, et d'interpréter les histogrammes de mes variables nutri sur lesquels je ne me suis pas attardé pendant ma présentation car je ne les trouvais pas très concluants/pertinents.
+
+En terme de remarques, il m'a conseillé de quand même traiter les histogrammes, même pour juste les décrire (distribution non-normale, étalée à droite/gauche,...) et d'afficher le cercle des corrélations avec la projection des individus lors d'une ACP.
+Bon courage à tous, moi je file sur les bâtiments de Seattle!
