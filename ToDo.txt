@@ -1,0 +1,5 @@
+Links to review
+
+### Custom Imputer ###
+- https://towardsdatascience.com/coding-a-custom-imputer-in-scikit-learn-31bd68e541de
+- https://datascience.stackexchange.com/questions/71856/custom-functions-and-pipelines
