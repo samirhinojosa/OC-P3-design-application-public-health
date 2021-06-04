@@ -1,39 +1,36 @@
-# Education Systems 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Design an application for public health [OpenClassrooms P3]
 
 ## **Problem to solve**
 
-You are **Data Scientist** in an **EdTech start-up**, called **Academy**, which offers online training content for high school and university level audiences.
+The **"Public Health France"** agency has launched a call for projects to find innovative ideas for food-related applications. You want to participate and come up with an idea for an application.
 
-Mark, your manager, has invited you to a meeting to introduce you to the company's international expansion plan. 
+## **Your mission**
 
-He gives you a first mission of exploratory analysis, to determine if the data on education of **the World Bank** allow to inform the expansion plan.
+After reading the call for projects, here are the different stages that you have identified:
 
-Here are the different **questions** Mark would like to explore, which you noted during the meeting:
+1. Process the data set in order to locate relevant variables for future processing. Automate these treatments to avoid repeating these operations.
+2. Throughout the analysis, produce visualizations to better understand the data. Perform a univariate analysis for each variable of interest, in order to synthesize its behavior.
+3. Confirm or disprove the hypotheses using multivariate analysis. Perform the appropriate statistical tests to verify the significance of the results.
+4. Develop an idea for an application. Identify arguments justifying the feasibility (or not) of the application from Open Food Facts data.
+5. Write an exploration report and pitch your idea during the project defense.   
 
-1. Which countries have a strong potential of customers for our services?
-2. For each of these countries, how will this potential customer develop?
-3. In which countries should the company operate as a priority?
+## **The data**
 
-## **Repository file structure**
+**The Open Food Fact** dataset is available on the official [website](https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv). At the same time, you can check different types of files [here](https://world.openfoodfacts.org/data).
 
-- notebook.ipynb: Notebook with the final work
-- notebook_draft.ipynb: Pre-exploratory data analysis
-- supports: Folder with documents to support the work done
-    - entity_relationship.drawio: Entity relationship diagrame make with [draw.io](https://app.diagrams.net/)
-    - Project 2 presentation: Project presentation in French
-- img: Images and graphs of the project
+Variables are defined at this [address](https://world.openfoodfacts.org/data/data-fields.txt).
 
-    - There is one datasets "List of all countries with their 2 digit codes (ISO 3166-1)" in other link.
-    You can get it [here](https://datahub.io/core/country-list)
+The fields are separated into four sections:
 
-The **datasets** should be located in folder called **"datasets"** in the root path.
-You can get the datasets [here](https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/Parcours_data_scientist/Projet+-+Donn%C3%A9es+%C3%A9ducatives/Projet+Python_Dataset_Edstats_csv.zip)
+- General information on the product sheet: name, date of modification, etc.
+- A set of tags: product category, location, origin, etc.
+- The ingredients of the products and their possible additives.
+- Nutritional information: amount in grams of a nutrient per 100 grams of the product.
 
-For more details / information about the datasets, you can visit the following links
-- [Education Statistics](https://datacatalog.worldbank.org/dataset/education-statistics)
-- [Education Statistics (EdStats)](https://datatopics.worldbank.org/education/)
+For more details / information about, you can visit the following links
+- [Open Food Facts](https://world.openfoodfacts.org/)
+- [Nutri-Score](https://www.santepubliquefrance.fr/determinants-de-sante/nutrition-et-activite-physique/articles/nutri-score)
+
+### **Final note**
 
 The notebook is optimized to be used with Jupyter lab.
-
-    
