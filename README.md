@@ -1,4 +1,4 @@
-# Design an application for public health [OpenClassrooms P3]
+# Design an application for public health [OC-P3]
 
 ## **Problem to solve**
 
@@ -31,6 +31,15 @@ For more details / information about, you can visit the following links
 - [Open Food Facts](https://world.openfoodfacts.org/)
 - [Nutri-Score](https://www.santepubliquefrance.fr/determinants-de-sante/nutrition-et-activite-physique/articles/nutri-score)
 
+## **Repository file structure**
+
+- notebook.ipynb: Notebook with the final work
+- notebook_draft.ipynb: Pre-exploratory data analysis
+- img: Images and graphs of the project
+- supports: Folder with documents to support the work done
+    - Project 3 presentation: Project presentation in French
+
 ### **Final note**
 
-The notebook is optimized to be used with Jupyter lab.
+- The notebook is optimized to be used with **Jupyter lab**.
+- The **datasets** should be located in folder called **datasets** in the root path
