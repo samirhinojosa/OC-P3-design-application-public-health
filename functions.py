@@ -52,47 +52,47 @@ def display_circles(pcs, n_comp, pca, axis_ranks, labels=None, label_rotation=0,
             plt.xlabel('F{} ({}%)'.format(d1+1, round(100*pca.explained_variance_ratio_[d1],1)))
             plt.ylabel('F{} ({}%)'.format(d2+1, round(100*pca.explained_variance_ratio_[d2],1)))
 
-            plt.title("Cercle des corrélations (F{} et F{})".format(d1+1, d2+1))
+            plt.title("Correlation Circle (F{} et F{})".format(d1+1, d2+1))
+            plt.savefig("img/correlations-circle-(F{} et F{}).png".format(d1+1, d2+1))
             plt.show(block=False)
         
-def display_factorial_planes(X_projected, n_comp, pca, axis_ranks, labels=None, alpha=1, illustrative_var=None):
-    for d1,d2 in axis_ranks:
+           
+def display_factorial_planes(X_proj, n_comp, pca, axis_ranks, labels=None,
+                             width=16, alpha=1, n_cols=3, illus_var=None,
+                             lab_on=True, size=10):
+    n_rows = (n_comp+1)//n_cols
+    fig = plt.figure(figsize=(width,n_rows*width/n_cols))
+    # boucle sur chaque plan factoriel
+    for i, (d1,d2) in (enumerate(axis_ranks)):
         if d2 < n_comp:
- 
-            # initialisation de la figure       
-            fig = plt.figure(figsize=(7,6))
-        
-            # affichage des points
-            if illustrative_var is None:
-                plt.scatter(X_projected[:, d1], X_projected[:, d2], alpha=alpha)
+            ax = fig.add_subplot(n_rows, n_cols, i+1)
+            # points
+            if illus_var is None:
+                ax.scatter(X_proj[:, d1], X_proj[:, d2], alpha=alpha, s=size)
             else:
-                illustrative_var = np.array(illustrative_var)
-                for value in np.unique(illustrative_var):
-                    selected = np.where(illustrative_var == value)
-                    plt.scatter(X_projected[selected, d1], X_projected[selected, d2], alpha=alpha, label=value)
-                plt.legend()
-
-            # affichage des labels des points
-            if labels is not None:
-                for i,(x,y) in enumerate(X_projected[:,[d1,d2]]):
-                    plt.text(x, y, labels[i],
-                              fontsize='14', ha='center',va='center') 
-                
-            # détermination des limites du graphique
-            boundary = np.max(np.abs(X_projected[:, [d1,d2]])) * 1.1
-            plt.xlim([-boundary,boundary])
-            plt.ylim([-boundary,boundary])
-        
-            # affichage des lignes horizontales et verticales
-            plt.plot([-100, 100], [0, 0], color='grey', ls='--')
-            plt.plot([0, 0], [-100, 100], color='grey', ls='--')
-
+                illus_var = np.array(illus_var)
+                for value in np.unique(illus_var):
+                    sel = np.where(illus_var == value)
+                    ax.scatter(X_proj[sel, d1], X_proj[sel, d2], 
+                                alpha=alpha, label=value)
+                ax.legend()
+            # labels points
+            if labels is not None and lab_on:
+                for i,(x,y) in enumerate(X_proj[:,[d1,d2]]):
+                    ax.text(x, y, labels[i],
+                              fontsize='14', ha='center',va='center')   
+            # limites
+            bound = np.max(np.abs(X_proj[:, [d1,d2]])) * 1.1
+            ax.set(xlim=(-bound,bound), ylim=(-bound,bound))
+            # lignes horizontales et verticales
+            ax.plot([-100, 100], [0, 0], color='grey', ls='--')
+            ax.plot([0, 0], [-100, 100], color='grey', ls='--')
             # nom des axes, avec le pourcentage d'inertie expliqué
-            plt.xlabel('F{} ({}%)'.format(d1+1, round(100*pca.explained_variance_ratio_[d1],1)))
-            plt.ylabel('F{} ({}%)'.format(d2+1, round(100*pca.explained_variance_ratio_[d2],1)))
-
-            plt.title("Projection des individus (sur F{} et F{})".format(d1+1, d2+1))
-            plt.show(block=False)
+            ax.set_xlabel('F{} ({}%)'.format(d1+1, round(100*pca.explained_variance_ratio_[d1],1)))
+            ax.set_ylabel('F{} ({}%)'.format(d2+1, round(100*pca.explained_variance_ratio_[d2],1)))
+            ax.set_title("Projection of individuals (sur F{} et F{})".format(d1+1, d2+1))
+            plt.savefig("img/projection-of-individuals-(F{} et F{}).png".format(d1+1, d2+1))
+    plt.tight_layout()
 
 def display_scree_plot(pca):
     scree = pca.explained_variance_ratio_*100
