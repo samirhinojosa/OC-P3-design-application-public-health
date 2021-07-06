@@ -33,8 +33,8 @@ For more details / information about, you can visit the following links
 
 ## **Repository file structure**
 
-- notebook.ipynb: Notebook with the final work
-- notebook_draft.ipynb: Pre-exploratory data analysis
+- cleaning_notebook.ipynb: notebook with all process to clean the data
+- analysis_notebook.ipynb: Exploratory analysis performed on the data 
 - img: Images and graphs of the project
 - supports: Folder with documents to support the work done
     - Project 3 presentation: Project presentation in French
